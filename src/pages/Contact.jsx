@@ -20,7 +20,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Send form data to the server
-    axios.post('http://localhost:8000/api/contact', formData)
+    axios.post('https://backendojaswa-2.onrender.com/api/contact', formData)
       .then(response => {
         console.log('Form Data Submitted:', response.data);
         // Reset form

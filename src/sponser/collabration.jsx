@@ -23,7 +23,7 @@ const Collaboration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/Collaboration', formData);
+      const response = await axios.post('https://backendojaswa-2.onrender.com/api/Collaboration', formData);
       console.log('Form data submitted:', response.data);
       setFormData({
         name: '',
