@@ -5,7 +5,7 @@ import { TeamCard } from '../team/TeamCard.jsx';
 const Team = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center animate-fade-in-down ">
-      <div className="text-4xl font-bold my-8 ">Batch 2025</div>
+      <div className="text-3xl font-bold my-8 font-serif ">Batch 2025</div>
       <div className="flex flex-wrap justify-center">
         {teamMembers2025.map((member, index) => (
           <div key={index} className="m-4">
@@ -14,7 +14,7 @@ const Team = () => {
         ))}
       </div>
 
-      <div className="text-4xl font-bold my-8">Batch 2026</div>
+      <div className="text-2xl font-bold my-8 font-serif">Batch 2026</div>
       <div className="flex flex-wrap justify-center">
         {teamMembers2026.map((member, index) => (
           <div key={index} className="m-4">

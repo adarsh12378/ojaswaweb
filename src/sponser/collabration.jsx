@@ -12,8 +12,26 @@ const Collaboration = () => {
     Feedback: '',
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Validate contact number to ensure it contains only numbers
+    if (name === 'contactNumber' && isNaN(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        contactNumber: 'Contact Number must be a number',
+      }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        contactNumber: '',
+      }));
+    }
+
     setFormData({
       ...formData,
       [name]: value,
@@ -22,9 +40,18 @@ const Collaboration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check for errors before submitting
+    if (errors.contactNumber) {
+      return;
+    }
+
+    setIsLoading(true);
+
     try {
       const response = await axios.post('https://backendojaswa-2.onrender.com/api/Collaboration', formData);
       console.log('Form data submitted:', response.data);
+      setIsSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -34,8 +61,14 @@ const Collaboration = () => {
         contactNumber: '',
         Feedback: '',
       });
+      // Hide success message after a delay
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
     } catch (error) {
       console.error('Error submitting form data', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -45,7 +78,15 @@ const Collaboration = () => {
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all hover:scale-105"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Sponsorship Form</h2>
+        {isSubmitted && (
+          <div className="mb-4 p-4 bg-green-100 text-green-700 rounded-md text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Message Sent!
+          </div>
+        )}
+        <h2 className="text-2xl font-bold mb-6 text-center font-serif">Sponsorship Form</h2>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="name">
             Name
@@ -115,21 +156,17 @@ const Collaboration = () => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="sponsorshipLevel">
-            Sponsorship Level
+            Sponsorship Amount
           </label>
-          <select
+          <input
+            type="text"
             id="sponsorshipLevel"
             name="sponsorshipLevel"
             value={formData.sponsorshipLevel}
             onChange={handleChange}
-            className="max-w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             required
-          >
-            <option value="">Select a level</option>
-            <option value="100k to 50k">100k to 50k</option>
-            <option value="50k to 30k">50k to 30k</option>
-            <option value="30k to 10k">30k to 10k</option>
-          </select>
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="contactNumber">
@@ -141,13 +178,16 @@ const Collaboration = () => {
             name="contactNumber"
             value={formData.contactNumber}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.contactNumber ? 'border-red-500 focus:ring-red-500' : 'focus:ring-indigo-500'}`}
             required
           />
+          {errors.contactNumber && (
+            <p className="text-red-500 text-sm mt-1">{errors.contactNumber}</p>
+          )}
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="feedback">
-            Feedback
+            Tell About Yourself
           </label>
           <textarea
             id="feedback"
@@ -162,8 +202,9 @@ const Collaboration = () => {
         <button
           type="submit"
           className="w-full bg-indigo-500 text-white py-2 rounded-lg font-semibold hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105"
+          disabled={isLoading}
         >
-          Submit
+          {isLoading ? 'Submitting...' : 'Submit'}
         </button>
       </form>
     </div>

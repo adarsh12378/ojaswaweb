@@ -8,6 +8,8 @@ import image2 from '../assets/ojaswa3.jpg';
 import image3 from "../assets/ojaswa4.jpg";
 import image4 from "../assets/ojaswa5.jpg";
 import image5 from "../assets/ojaswa6.jpg";
+import image7 from "../assets/ojaswa8.jpg";
+import image8 from "../assets/ojaswa9.jpg"
 
 
 
@@ -26,7 +28,7 @@ const SliderComponent = () => {
     arrows: false,
   };
 
-  const images = [image5, image2 ,image3,image4,image1/* Add more images here */];
+  const images = [image5, image2 ,image7,image4,image1,image8,image3/* Add more images here */];
 
   return (
     <div className="h-full w-70vh overflow-hidden">
