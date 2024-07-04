@@ -3,7 +3,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faPhone, faMapMarkerAlt, faExternalLinkAlt,faUser } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faMapMarkerAlt, faExternalLinkAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -17,34 +18,40 @@ const Footer = () => {
             <span className='font-serif'>club.ojaswa@gmail.com</span>
           </div>
           <div className="flex items-center mb-2">
-          <FontAwesomeIcon icon={faUser} className="mr-2" />
-          <span className='font-serif'>Aru Agrawal :</span>
-            {/* <FontAwesomeIcon icon={faPhone} className="mr-2" /> */}
+            <FontAwesomeIcon icon={faUser} className="mr-2" />
+            <span className='font-serif'>Aru Agrawal :</span>
             <span>+91 79996 08275</span>
           </div>
           <div className="flex items-center mb-2">
-          <FontAwesomeIcon icon={faUser} className="mr-2" />
-          <span className='font-serif'>Nitesh Gurjar :</span>
-            {/* <FontAwesomeIcon icon={faPhone} className="mr-2" /> */}
+            <FontAwesomeIcon icon={faUser} className="mr-2" />
+            <span className='font-serif'>Nitesh Gurjar :</span>
             <span>+91 81099 03959</span>
           </div>
           <div className="flex items-center">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
             <span className='font-serif'>Shri Govindram Seksaria Institute of Technology and Science, Indore, Madhya Pradesh, India</span>
           </div>
-         
         </div>
         
         {/* Center - Useful links */}
         <div className="mb-4 md:mb-0">
           <h4 className="text-lg mb-2 font-serif">Useful Links</h4>
           <ul className="text-md">
-            <li><a href="/" className="text-gray-300 hover:text-white transition duration-300 font-serif">Home</a></li>
-            <li><a href="about" className="text-gray-300 hover:text-white transition duration-300 font-serif">About</a></li>
-            <li><a href="team" className="text-gray-300 hover:text-white transition duration-300 font-serif">Team</a></li>
-            <li><a href="sponsor" className="text-gray-300 hover:text-white transition duration-300 font-serif">Sponsor</a></li>
-            <li><a href="contact" className="text-gray-300 hover:text-white transition duration-300 font-serif">Contact Us</a></li>
-
+            <li>
+              <NavLink to="/" className="text-gray-300 hover:text-white transition duration-300 font-serif">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="text-gray-300 hover:text-white transition duration-300 font-serif">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/team" className="text-gray-300 hover:text-white transition duration-300 font-serif">Team</NavLink>
+            </li>
+            <li>
+              <NavLink to="/sponsor" className="text-gray-300 hover:text-white transition duration-300 font-serif">Sponsor</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" className="text-gray-300 hover:text-white transition duration-300 font-serif">Contact Us</NavLink>
+            </li>
           </ul>
         </div>
         
