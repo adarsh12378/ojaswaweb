@@ -25,7 +25,7 @@ const Header = () => {
           <div className="flex flex-col lg:flex-row lg:space-x-12 ml-auto">
             <NavLink
               to="/"
-              className="block lg:inline-block text-2xl text-white hover:text-gray-700 "
+              className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif "
               activeClassName="text-gray-400"
               onClick={handleLinkClick}
             >
@@ -33,7 +33,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/about"
-              className="block lg:inline-block text-2xl text-white hover:text-gray-700"
+              className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif"
               activeClassName="text-gray-400"
               onClick={handleLinkClick}
             >
@@ -41,7 +41,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/event"
-              className="block lg:inline-block text-2xl text-white hover:text-gray-700"
+              className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif"
               activeClassName="text-gray-400"
               onClick={handleLinkClick}
             >
@@ -49,7 +49,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/team"
-              className="block lg:inline-block text-2xl text-white hover:text-gray-700"
+              className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif"
               activeClassName="text-gray-400"
               onClick={handleLinkClick}
             >
@@ -57,7 +57,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/sponsor"
-              className="block lg:inline-block text-2xl text-white hover:text-gray-700"
+              className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif"
               activeClassName="text-gray-400"
               onClick={handleLinkClick}
             >
@@ -65,7 +65,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/contact"
-              className="block lg:inline-block text-2xl text-white hover:text-gray-700"
+              className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif"
               activeClassName="text-gray-400"
               onClick={handleLinkClick}
             >
@@ -76,7 +76,7 @@ const Header = () => {
         <div className="lg:hidden">
           <button
             onClick={toggleMenu}
-            className="text-white hover:text-white focus:outline-none focus:text-white"
+            className="text-white hover:text-white focus:outline-none focus:text-white font-serif"
           >
             <svg
               className="h-8 w-6"
@@ -100,7 +100,7 @@ const Header = () => {
         <div className="flex flex-col items-center space-y-6 mt-4 mb-1">
           <NavLink
             to="/"
-            className="block text-2xl text-white hover:text-gray-700"
+            className="block text-2xl text-white hover:text-gray-700 font-serif"
             activeClassName="text-gray-400"
             onClick={handleLinkClick}
           >
@@ -108,7 +108,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/about"
-            className="block text-2xl text-white hover:text-gray-700"
+            className="block text-2xl text-white hover:text-gray-700 font-serif"
             activeClassName="text-gray-400"
             onClick={handleLinkClick}
           >
@@ -116,7 +116,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/event"
-            className="block text-2xl text-white hover:text-gray-700"
+            className="block text-2xl text-white hover:text-gray-700 font-serif"
             activeClassName="text-gray-400"
             onClick={handleLinkClick}
           >
@@ -124,7 +124,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/team"
-            className="block text-2xl text-white hover:text-gray-700"
+            className="block text-2xl text-white hover:text-gray-700 font-serif"
             activeClassName="text-gray-400"
             onClick={handleLinkClick}
           >
@@ -132,7 +132,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/sponsor"
-            className="block text-2xl text-white hover:text-gray-700"
+            className="block text-2xl text-white hover:text-gray-700 font-serif"
             activeClassName="text-gray-400"
             onClick={handleLinkClick}
           >
@@ -140,7 +140,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/contact"
-            className="block text-2xl text-white hover:text-gray-700"
+            className="block text-2xl text-white hover:text-gray-700 font-serif"
             activeClassName="text-gray-400"
             onClick={handleLinkClick}
           >

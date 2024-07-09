@@ -1,23 +1,23 @@
-import image1 from "../sponser/oppo.jpg"
-import image2 from "../sponser/bigfm.jpg";
-import image3 from "../sponser/global.jpg";
-import image4 from  "../sponser/bank of ma.jpg"
-import image5 from "../sponser/baskin.jpg"
-import image6 from "../sponser/codemantra.jpg";
-import image7 from "../sponser/lakme.png";
-import image8 from  "../sponser/shiva .jpg"
-import image9 from "../sponser/subway.jpg"
-import image10 from "../sponser/efai.jpg";
-import image11 from "../sponser/bigfm.jpg";
-import image12 from  "../sponser/time.jpg";
-import image13 from "../sponser/cafe.jpg"
-import image14 from "../sponser/habit.jpg";
-import image15 from "../sponser/mbr.jpg";
-import image16 from "../sponser/pintola.jpg";
-import image17 from "../sponser/d lion gym.jpg";
-import image18 from "../sponser/bigfm.jpg";
-import image19 from "../sponser/sajo.jpg"
-import image20 from "../sponser/universal.jpg"
+import image1 from "./sponserimages/oppo.jpg"
+import image2 from "./sponserimages/bigfm.jpg";
+import image3 from "./sponserimages/global.jpg";
+import image4 from  "./sponserimages/bank of ma.jpg"
+import image5 from "./sponserimages/baskin.jpg"
+import image6 from "./sponserimages/codemantra.jpg";
+import image7 from "./sponserimages/lakme.png";
+import image8 from  "./sponserimages/shiva .jpg"
+import image9 from "./sponserimages/subway.jpg"
+import image10 from "./sponserimages/efai.jpg";
+import image11 from "./sponserimages/Adynee.jpg";
+import image12 from  "./sponserimages/time.jpg";
+import image13 from "./sponserimages/cafe.jpg"
+import image14 from "./sponserimages/habit.jpg";
+import image15 from "./sponserimages/mbr.jpg";
+import image16 from "./sponserimages/pintola.jpg";
+import image17 from "./sponserimages/d lion gym.jpg";
+import image18 from "./sponserimages/bigfm.jpg";
+import image19 from "./sponserimages/sajo.jpg"
+import image20 from "./sponserimages/universal.jpg"
 
 
 const images=[

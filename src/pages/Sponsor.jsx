@@ -11,7 +11,7 @@ const Sponsorship = () => {
 We offer unparalleled benefits to our sponsors, including brand visibility on our official merchandise. Sponsors can host sessions or seminars to engage directly with our college audience. Their brand is prominently showcased across all our social media platforms, official emails, and event videos, ensuring extensive outreach. Sponsors also benefit from promotion in all official communications to participants, facilitating enhanced engagement and brand recognition. Additionally, we generate significant online presence for our sponsors with Google reviews and Instagram followers.
       </p>
       <p className="mb-4 mt-8 text-center text-xl font-serif">
-        For Collaboration as a Sponsor
+         Collaboration as a Sponsor
       </p>
       <div className="text-center">
         <Link to="/sponsorship-form">
