@@ -19,7 +19,6 @@ const Collaboration = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Validate contact number to ensure it contains only numbers
     if (name === 'contactNumber' && isNaN(value)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -41,7 +40,6 @@ const Collaboration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check for errors before submitting
     if (errors.contactNumber) {
       return;
     }
@@ -61,7 +59,6 @@ const Collaboration = () => {
         contactNumber: '',
         Feedback: '',
       });
-      // Hide success message after a delay
       setTimeout(() => {
         setIsSubmitted(false);
       }, 3000);

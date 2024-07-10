@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,12 +9,11 @@ const Footer = () => {
   return (
     <footer className="bg-dark-blue-light-blue-darkBlue text-white py-8">
       <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-center md:justify-between px-4">
-        {/* Left side - Contact details */}
         <div className="mb-4 md:mb-0">
           <h4 className="text-lg mb-2 font-serif">Contact Details</h4>
           <div className="flex items-center mb-2">
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-            <span className='font-serif'>club.ojaswa@gmail.com</span>
+            <a href="mailto:club.ojaswa@gmail.com" target='_blank' className="font-serif hover:text-white transition duration-300">club.ojaswa@gmail.com</a>
           </div>
           <div className="flex items-center mb-2">
             <FontAwesomeIcon icon={faUser} className="mr-2" />
@@ -29,11 +27,12 @@ const Footer = () => {
           </div>
           <div className="flex items-center">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+            <a href='https://www.sgsits.ac.in/' target='_blank'> 
             <span className='font-serif'>Shri Govindram Seksaria Institute of Technology and Science, Indore, Madhya Pradesh, India</span>
+            </a>
           </div>
         </div>
         
-        {/* Center - Useful links */}
         <div className="mb-4 md:mb-0">
           <h4 className="text-lg mb-2 font-serif">Useful Links</h4>
           <ul className="text-md">
@@ -55,21 +54,20 @@ const Footer = () => {
           </ul>
         </div>
         
-        {/* Right side - Social media icons */}
         <div>
           <h4 className="text-lg mb-2 font-serif">Follow Us</h4>
           <div className="flex space-x-4">
             <a href="https://www.facebook.com/club.ojaswa.sgsits/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} className="text-2xl hover:text-gray-400 transition duration-300" />
+              <FontAwesomeIcon icon={faFacebook} className="text-2xl hover:text-gray-400 transition duration-300" style={{ color: '#3b5998' }} />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTwitter} className="text-2xl hover:text-gray-400 transition duration-300" />
+              <FontAwesomeIcon icon={faTwitter} className="text-2xl hover:text-gray-400 transition duration-300" style={{ color: '#1da1f2' }} />
             </a>
             <a href="https://www.instagram.com/clubojaswa/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} className="text-2xl hover:text-gray-400 transition duration-300" />
+              <FontAwesomeIcon icon={faInstagram} className="text-2xl hover:text-gray-400 transition duration-300" style={{ color: '#e1306c' }} />
             </a>
             <a href="https://www.linkedin.com/company/ojaswa-enhancing-personality-nurturing-humanity/mycompany/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} className="text-2xl hover:text-gray-400 transition duration-300" />
+              <FontAwesomeIcon icon={faLinkedin} className="text-2xl hover:text-gray-400 transition duration-300" style={{ color: '#0077b5' }} />
             </a>
           </div>
         </div>

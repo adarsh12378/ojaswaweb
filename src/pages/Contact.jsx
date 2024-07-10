@@ -20,17 +20,23 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Validate contact field to ensure it contains only numbers
-    if (name === 'contact' && isNaN(value)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        contact: 'Contact must be a number',
-      }));
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        contact: '',
-      }));
+    if (name === 'contact') {
+      if (isNaN(value)) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          contact: 'Contact must be a number',
+        }));
+      } else if (value.length > 10) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          contact: 'Contact must be 10 digits or less',
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          contact: '',
+        }));
+      }
     }
 
     setFormData({ ...formData, [name]: value });
@@ -39,18 +45,16 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check for errors before submitting
     if (errors.contact) {
       return;
     }
 
     setIsLoading(true);
 
-    // Send form data to the server
     axios.post('https://backendojaswa-2.onrender.com/api/contact', formData)
       .then(response => {
         console.log('Form Data Submitted:', response.data);
-        // Show success message
+
         setIsSubmitted(true);
         // Reset form
         setFormData({
@@ -60,7 +64,6 @@ const Contact = () => {
           subject: '',
           message: '',
         });
-        // Hide success message after a delay
         setTimeout(() => {
           setIsSubmitted(false);
         }, 3000);
