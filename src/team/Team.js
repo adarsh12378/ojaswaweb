@@ -17,7 +17,7 @@ import image11 from './teamimages/om.jpg';
   import image16 from './teamimages/vipin.jpg'
   import image17 from './teamimages/lakessha.jpg'
   import image18 from './teamimages/sushrut.jpg'
-  import image19 from './teamimages/swasti.jpg'
+  import image19 from './teamimages/Swati .jpg'
   import image20 from './teamimages/harshit.jpg'
   import image21 from './teamimages/satwik.jpg'
 import image22 from './teamimages/ishika.jpg'
