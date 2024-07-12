@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone, faMapMarkerAlt, faExternalLinkAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-import logo from "../../public/icon.png"
+import logo from "../../public/icon.png";
 
 const Footer = () => {
   return (
@@ -56,7 +56,6 @@ const Footer = () => {
         </div>
         
         <div>
-
           <h4 className="text-lg mb-2 font-serif">Follow Us</h4>
           <div className="flex space-x-4">
             <a href="https://www.facebook.com/club.ojaswa.sgsits/" target="_blank" rel="noopener noreferrer">
@@ -71,6 +70,11 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/ojaswa-enhancing-personality-nurturing-humanity/mycompany/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedin} className="text-2xl hover:text-gray-400 transition duration-300" style={{ color: '#0077b5' }} />
             </a>
+          </div>
+          <div className="mt-5">
+            <div className="flex items-center mb-2">
+              <a href="https://www.linkedin.com/in/adarsh-gupta-583975224/" target="_blank" rel="noopener noreferrer" className="font-serif hover:text-white transition duration-300 ml-2">About Developer</a>
+            </div>
           </div>
         </div>
       </div>
