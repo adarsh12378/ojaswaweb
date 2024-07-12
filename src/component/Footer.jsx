@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone, faMapMarkerAlt, faExternalLinkAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import logo from "../../public/icon.png"
 
 const Footer = () => {
   return (
@@ -26,9 +26,10 @@ const Footer = () => {
             <span>+91 81099 03959</span>
           </div>
           <div className="flex items-center">
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-            <a href='https://www.sgsits.ac.in/' target='_blank'> 
-            <span className='font-serif'>Shri Govindram Seksaria Institute of Technology and Science, Indore, Madhya Pradesh, India</span>
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 mb-6" />
+            <a href='https://www.sgsits.ac.in/' target='_blank'>
+              <span className='font-serif'>Shri Govindram Seksaria Institute of Technology and Science</span>
+              <span className='block font-serif'>Indore, Madhya Pradesh, India</span>
             </a>
           </div>
         </div>
@@ -37,24 +38,25 @@ const Footer = () => {
           <h4 className="text-lg mb-2 font-serif">Useful Links</h4>
           <ul className="text-md">
             <li>
-              <NavLink to="/" className="text-gray-300 hover:text-white transition duration-300 font-serif">Home</NavLink>
+              <NavLink to="/" className="text-gray-300 hover:text-white transition duration-300 font-serif text-xl">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/about" className="text-gray-300 hover:text-white transition duration-300 font-serif">About</NavLink>
+              <NavLink to="/about" className="text-gray-300 hover:text-white transition duration-300 font-serif text-xl">About</NavLink>
             </li>
             <li>
-              <NavLink to="/team" className="text-gray-300 hover:text-white transition duration-300 font-serif">Team</NavLink>
+              <NavLink to="/team" className="text-gray-300 hover:text-white transition duration-300 font-serif text-xl">Team</NavLink>
             </li>
             <li>
-              <NavLink to="/sponsor" className="text-gray-300 hover:text-white transition duration-300 font-serif">Sponsor</NavLink>
+              <NavLink to="/sponsor" className="text-gray-300 hover:text-white transition duration-300 font-serif text-xl">Sponsor</NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className="text-gray-300 hover:text-white transition duration-300 font-serif">Contact Us</NavLink>
+              <NavLink to="/contact" className="text-gray-300 hover:text-white transition duration-300 font-serif text-xl">Contact Us</NavLink>
             </li>
           </ul>
         </div>
         
         <div>
+
           <h4 className="text-lg mb-2 font-serif">Follow Us</h4>
           <div className="flex space-x-4">
             <a href="https://www.facebook.com/club.ojaswa.sgsits/" target="_blank" rel="noopener noreferrer">

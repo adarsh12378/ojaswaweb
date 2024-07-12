@@ -20,6 +20,18 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
+    if (name === 'name' && /[^a-zA-Z\s]/.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        name: 'Name must contain only alphabets',
+      }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        name: '',
+      }));
+    }
+
     if (name === 'contact') {
       if (isNaN(value)) {
         setErrors((prevErrors) => ({
@@ -29,7 +41,7 @@ const Contact = () => {
       } else if (value.length > 10) {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          contact: 'Contact must be 10 digits or less',
+          contact: 'Contact must be of 10 digits',
         }));
       } else {
         setErrors((prevErrors) => ({
@@ -38,14 +50,13 @@ const Contact = () => {
         }));
       }
     }
-
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (errors.contact) {
+    if (errors.contact || errors.name) {
       return;
     }
 
@@ -54,8 +65,8 @@ const Contact = () => {
     axios.post('https://backendojaswa-2.onrender.com/api/contact', formData)
       .then(response => {
         console.log('Form Data Submitted:', response.data);
-
         setIsSubmitted(true);
+
         // Reset form
         setFormData({
           name: '',
@@ -68,6 +79,7 @@ const Contact = () => {
           setIsSubmitted(false);
         }, 3000);
       })
+
       .catch(error => {
         console.error('There was an error submitting the form!', error);
       })
@@ -75,6 +87,7 @@ const Contact = () => {
         setIsLoading(false);
       });
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center mt-5">
@@ -93,7 +106,7 @@ const Contact = () => {
               Message Sent!
             </div>
           )}
-          <h2 className="text-2xl font-bold mb-6 text-center font-serif">Contact Us</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center font-serif animate-pulse">Contact Us</h2>
           <p className="text-center text-gray-700 mb-8 text-md font-semibold">
             We're here to help you with any questions or concerns.
           </p>
@@ -109,6 +122,9 @@ const Contact = () => {
                 required
               />
             </div>
+            {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+          )}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">Email</label>
               <input

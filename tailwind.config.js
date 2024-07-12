@@ -1,4 +1,3 @@
-// tailwind.config.js
 module.exports = {
   content: [
     "./index.html",
@@ -50,6 +49,7 @@ module.exports = {
         'fade-in-up': 'fade-in-up 3s ease-out',
         'fade-in-left': 'fade-in-left 1s ease-out',
         'fade-in-right': 'fade-in-right 1s ease-out',
+        'hover-bounce': 'hover-bounce 1s infinite',
       },
       keyframes: {
         'fade-in-down': {
@@ -91,6 +91,10 @@ module.exports = {
             opacity: '1',
             transform: 'translateX(0)',
           },
+        },
+        'hover-bounce': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
         },
       },
     },

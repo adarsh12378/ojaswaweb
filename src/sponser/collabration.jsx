@@ -19,6 +19,33 @@ const Collaboration = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
+    // Validation for name to contain only alphabets
+    if (name === 'name' && /[^a-zA-Z\s]/.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        name: 'Name must contain only alphabets',
+      }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        name: '',
+      }));
+    }
+
+    // // Validation for email to not contain numbers
+    // if (name === 'email' && /\d/.test(value)) {
+    //   setErrors((prevErrors) => ({
+    //     ...prevErrors,
+    //     email: 'Email must not contain numbers',
+    //   }));
+    // } else {
+    //   setErrors((prevErrors) => ({
+    //     ...prevErrors,
+    //     email: '',
+    //   }));
+    // }
+
+    // Validation for contactNumber to contain only numbers
     if (name === 'contactNumber' && isNaN(value)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -40,7 +67,7 @@ const Collaboration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (errors.contactNumber) {
+    if (errors.name || errors.email || errors.contactNumber) {
       return;
     }
 
@@ -83,7 +110,7 @@ const Collaboration = () => {
             Message Sent!
           </div>
         )}
-        <h2 className="text-2xl font-bold mb-6 text-center font-serif">Sponsorship Form</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center font-serif animate-pulse">Sponsorship Form</h2>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="name">
             Name
@@ -94,9 +121,12 @@ const Collaboration = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.name ? 'border-red-500 focus:ring-red-500' : 'focus:ring-indigo-500'}`}
             required
           />
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+          )}
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="email">
@@ -108,9 +138,12 @@ const Collaboration = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.email ? 'border-red-500 focus:ring-red-500' : 'focus:ring-indigo-500'}`}
             required
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2" htmlFor="company">

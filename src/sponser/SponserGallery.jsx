@@ -5,7 +5,7 @@ import { images } from './Sponser';
 const SponserGallery = () => {
   return (
     <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-        <div className='text-2xl text-center font-bold py-1 mt-2 mb-7 font-serif'>Past Sponsors of Club Ojaswa</div>
+        <div className='text-2xl text-center font-bold py-1 mt-2 mb-7 font-serif animate-pulse'>Past Sponsors of Club Ojaswa</div>
       <div className="grid grid-cols-4 grid-rows-3">
         {images.map((src, index) => (
           <motion.div
