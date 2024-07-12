@@ -11,7 +11,7 @@ const EventPage = () => {
             <div
               className="p-6 bg-gray-300 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 animate-fade-in-right"
             >
-              <h2 className="text-2xl font-bold mb-2 font-serif">{event.title}</h2>
+              <h2 className="text-2xl font-bold mb-2 font-serif animate-pulse">{event.title}</h2>
               <p className="text-gray-700 text-lg md:text-xl font-serif">{event.description}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">

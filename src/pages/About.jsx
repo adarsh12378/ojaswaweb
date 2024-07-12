@@ -1,16 +1,19 @@
 import React from 'react';
 import myImage from '../assets/ojaswa5.jpg';
-import mentor1 from '../assets/mentor2.jpg';
+ import mentor1 from '../assets/mentor2.jpg';
 import mentor2 from '../assets/mentor1.png';
 import mentor3 from '../assets/mentor3.png';
 import mentor4 from '../assets/mentor4.jpg';
 
+const director= [{ 
+  name: 'Professor R. K. Saxena', 
+  image: mentor1,
+  description: 'Professor R. K. Saxena, Director of SGSITS Indore, holds a Ph.D. in Electrical Engineering and has been a key figure at the institution since 1986. Leading the Electrical Engineering Department, he excels in Power Electronics, Digital Controls, and Power Quality. He has published extensively and holds patents in solar energy-driven motor control, enhancing SGSITS academic and research standards.'
+},];
+
+
 const mentors = [
-  { 
-    name: 'Professor R. K. Saxena', 
-    image: mentor1,
-    description: 'Professor R. K. Saxena, Director of SGSITS Indore, holds a Ph.D. in Electrical Engineering and has been a key figure at the institution since 1986. Leading the Electrical Engineering Department, he excels in Power Electronics, Digital Controls, and Power Quality. He has published extensively and holds patents in solar energy-driven motor control, enhancing SGSITS academic and research standards.'
-  },
+ 
   { 
     name: 'Dr. Anuradha Purohit', 
     image: mentor2,
@@ -28,10 +31,24 @@ const mentors = [
   },
 ];
 
+
+
+
 const MentorCard = ({ name, image, description }) => {
   return (
-    <div className="mentor-card bg-white p-6 rounded-lg shadow-lg text-center animate-fade-in-up">
-      <img src={image} alt={name} className="w-full h-48 object-cover rounded-lg mb-4" />
+    <div className="mentor-card bg-white p-6 rounded-lg shadow-lg text-center animate-fade-in-up ">
+      <img src={image} alt={name} className="w-full h-42 object-cover rounded-lg mb-4" />
+      <div className="text-left">
+        <h3 className="text-xl font-semibold mb-2">{name}</h3>
+        <p className="text-sm font-serif">{description}</p>
+      </div>
+    </div>
+  );
+};
+const MentorCard1 = ({ name, image, description }) => {
+  return (
+    <div className="mentor-card bg-white p-6 rounded-lg shadow-lg text-center animate-fade-in-up w-96 h-auto">
+      <img src={image} alt={name} className="w-full h-42 object-cover rounded-lg mx-auto mb-4" />
       <div className="text-left">
         <h3 className="text-xl font-semibold mb-2">{name}</h3>
         <p className="text-sm font-serif">{description}</p>
@@ -56,9 +73,19 @@ const AboutPage = () => {
         </div>
       </div>
 
+      <div className="mentors-section p-12 text-center ">
+  <h2 className="text-4xl font-bold mb-8 text-center font-serif animate-pulse">Our Director</h2>
+  <div className="flex justify-center">
+    {director.map((mentor, index) => (
+      <MentorCard1 key={index} name={mentor.name} image={mentor.image} description={mentor.description} />
+    ))}
+  </div>
+</div>
+
+
       <div className="mentors-section p-12 ">
         <h2 className="text-4xl font-bold mb-8 text-center font-serif animate-pulse">Our Mentors</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {mentors.map((mentor, index) => (
             <MentorCard key={index} name={mentor.name} image={mentor.image} description={mentor.description} />
           ))}
@@ -67,5 +94,4 @@ const AboutPage = () => {
     </div>
   );
 };
-
 export default AboutPage;
