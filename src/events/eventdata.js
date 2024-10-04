@@ -20,7 +20,7 @@ import image19 from "./eventimages/tedx3.jpg";
 import image20 from  "./eventimages/tedx4.jpg"
 
 
-let events = [
+const  events = [
     {
       title: "CYGNUS: A Litrophilic Saga",
       description: "Club Ojaswa at SGSITS, Indore, hosted Cygnus: A Litrophilic Saga, a vibrant literature festival designed to invite participants to delve deeply into their literary passions. The festival featured an array of events, including LitClash, which showcased participants' persuasive debating skills, Escape College, a thrilling test of problem-solving abilities, and Story Guessing, which ignited creative thinking and imagination. Cygnus'23 was more than just a festival; it was a laid-back and engaging celebration of literature, fostering an inclusive literary community for all attendees.",
@@ -36,6 +36,7 @@ let events = [
       description: "Judicia, held on 18-19 November 2022, was a legal expedition that challenged participants to unravel complex mysteries using their wisdom and astuteness. This event simulated a real courtroom environment, providing a unique platform for participants to engage in legal processes and trials. The miniature courtroom experience was a tremendous success, attracting students from various branches and capturing the interest of staff and faculty members alike. It brought together a convergence of mysteries, intellect, and success, making it a standout event in the academic calendar.",
       images: [image9,image10,image11,image12],
     },
+
     {
       title: "BATTLE OF INTELLECTS: Outwit, Outplay, Outsmart",
     description: "This intellectually stimulating competition began with a written test in the Outwit the Devil stage, where individuals showcased their knowledge and quick thinking. This was followed by Outplay to Survive a series of teamwork and courage challenges that required strategic collaboration and resilience. The event culminated in the dramatic final stage, Outsmart Them All,where participants demonstrated their oratory skills and ability to think on their feet. The Battle of Intellects ensured that brilliance and intellectual prowess prevailed, providing an enriching experience for all involved.",
@@ -48,6 +49,5 @@ let events = [
     },
   ];
 
-  
-  
   export {events};
+  

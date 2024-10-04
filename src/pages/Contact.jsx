@@ -67,7 +67,6 @@ const Contact = () => {
         console.log('Form Data Submitted:', response.data);
         setIsSubmitted(true);
 
-        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -75,6 +74,7 @@ const Contact = () => {
           subject: '',
           message: '',
         });
+        
         setTimeout(() => {
           setIsSubmitted(false);
         }, 3000);

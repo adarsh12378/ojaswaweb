@@ -23,7 +23,7 @@ const  App=()=>{
       <Route path="/team" element={<Team/>}/>
       <Route path="/sponsor" element={<Sponsor/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="//sponsorship-form" element={<Collabration/>}/>
+      <Route path="/sponsorship-form" element={<Collabration/>}/>
     </Routes>
     <Footer/>
     </Suspense>

@@ -45,6 +45,7 @@ const MentorCard = ({ name, image, description }) => {
     </div>
   );
 };
+
 const MentorCard1 = ({ name, image, description }) => {
   return (
     <div className="mentor-card bg-white p-6 rounded-lg shadow-lg text-center animate-fade-in-up w-96 h-auto">
@@ -56,7 +57,6 @@ const MentorCard1 = ({ name, image, description }) => {
     </div>
   );
 };
-
 
 const AboutPage = () => {
   return (
