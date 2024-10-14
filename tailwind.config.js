@@ -11,6 +11,12 @@ module.exports = {
           darkBlue: '#172A3A',
           lemonYellow: '#F3C623',
         },
+        brown: {
+          600: '#8B4513',  // Custom brown color
+          700: '#5B2F06',  // Darker brown on hover
+        },
+        'light-brown': '#D2B48C', // Light Brown background
+        'dark-brown': '#654321',  // Dark Brown text
         'cherry-red-off-white': {
           cherryRed: '#E63946',
           offWhite: '#F1FAEE',
@@ -44,14 +50,11 @@ module.exports = {
         customBlue: '#007BFF', // Replace with your desired blue color
         pastelPink: '#FFB6C1', // Replace with your desired pastel pink color
       },
-      animation: {
-        'fade-in-down': 'fade-in-down 3s ease-out',
-        'fade-in-up': 'fade-in-up 3s ease-out',
-        'fade-in-left': 'fade-in-left 1s ease-out',
-        'fade-in-right': 'fade-in-right 1s ease-out',
-        'hover-bounce': 'hover-bounce 1s infinite',
-      },
       keyframes: {
+        hoverAnimation: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
         'fade-in-down': {
           '0%': {
             opacity: '0',
@@ -96,6 +99,14 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-5px)' },
         },
+      },
+      animation: {
+        hoverAnimation: 'hoverAnimation 2s ease-in-out infinite',
+        'fade-in-down': 'fade-in-down 3s ease-out',
+        'fade-in-up': 'fade-in-up 3s ease-out',
+        'fade-in-left': 'fade-in-left 1s ease-out',
+        'fade-in-right': 'fade-in-right 1s ease-out',
+        'hover-bounce': 'hover-bounce 1s infinite',
       },
     },
   },

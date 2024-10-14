@@ -10,6 +10,7 @@ const Contact=lazy(()=>import("./pages/Contact"))
 const Header=lazy(()=>import("./component/Header")) 
 const Footer=lazy(()=>import("./component/Footer"))
 const Collabration=lazy(()=>import("./sponser/collabration"))
+const Upcomingevent=lazy(()=>import("./upcomingevent/Upcomingevent"))
 const  App=()=>{
   return (
     <>
@@ -23,6 +24,7 @@ const  App=()=>{
       <Route path="/team" element={<Team/>}/>
       <Route path="/sponsor" element={<Sponsor/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <Route path="/spire" element={<Upcomingevent/>}/>
       <Route path="/sponsorship-form" element={<Collabration/>}/>
     </Routes>
     <Footer/>

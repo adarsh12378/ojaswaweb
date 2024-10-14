@@ -23,6 +23,14 @@ const Header = () => {
         </div>
         <nav className="hidden lg:flex lg:items-center lg:ml-auto">
           <div className="flex flex-col lg:flex-row lg:space-x-12 ml-auto">
+          <NavLink
+  to="/spire"
+  className="block lg:inline-block text-2xl text-white font-serif font-bold transform transition-transform duration-500 ease-in-out hover:text-yellow-400 hover:shadow-2xl hover:bg-opacity-75 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 animate-hoverAnimation"
+  activeClassName="text-gray-400"
+  onClick={handleLinkClick}
+>
+  Spire
+</NavLink>
             <NavLink
               to="/"
               className="block lg:inline-block text-2xl text-white hover:text-gray-700 font-serif "
@@ -98,6 +106,14 @@ const Header = () => {
         
       <nav className={`${isOpen ? 'block' : 'hidden'} lg:hidden w-full`}>
         <div className="flex flex-col items-center space-y-6 mt-4 mb-1">
+        <NavLink
+  to="/spire"
+  className="block lg:inline-block text-2xl text-white font-serif font-bold transform transition-transform duration-500 ease-in-out hover:text-yellow-400 hover:shadow-2xl hover:bg-opacity-75 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 animate-hoverAnimation"
+  activeClassName="text-gray-400"
+  onClick={handleLinkClick}
+>
+  Spire
+</NavLink>
           <NavLink
             to="/"
             className="block text-2xl text-white hover:text-gray-700 font-serif"
