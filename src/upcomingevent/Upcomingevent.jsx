@@ -76,7 +76,7 @@ const UpcomingEventPage = () => {
 
         <div className="flex justify-between space-x-6">
           {eventDetails.eventFlow.map((item, index) => (
-          <motion.div
+<motion.div
   key={index}
   whileHover={{ scale: 1.05 }}
   initial={{ opacity: 0, x: -100 }}
@@ -85,16 +85,17 @@ const UpcomingEventPage = () => {
   className="flex-1 bg-white p-8 rounded-lg shadow-lg text-center relative"
   style={{
     backgroundImage: `url(${eventDetails.gallery[index % eventDetails.gallery.length]})`,
-    backgroundSize: "cover",          
+    backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",    
-    minHeight: "300px",               
-    height: "100%",                  
+    backgroundRepeat: "no-repeat",
+    minHeight: "300px",      // Ensures enough space for content
+    height: "300px",         // Fixes consistent height for each stage
     borderRadius: "10px",
   }}
 >
-  <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
-  <div className="relative z-10">
+  {/* Dark overlay for better text contrast */}
+  <div className="absolute inset-0 bg-black bg-opacity-60 rounded-lg"></div>
+  <div className="relative z-10 p-4">
     <p className="text-xl font-bold text-white font-serif">{item.time}</p>
     <p className="text-lg text-white mt-2 font-serif">{item.activity}</p>
   </div>
